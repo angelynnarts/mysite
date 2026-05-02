@@ -2,40 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>Angelynn Arts</title>
+    <!-- 1. WE REMOVED "maximum-scale" and "user-scalable=no" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelynn Arts - Test</title>
     <style>
-        /* 1. FONT DEFINITIONS (Fixed for Mobile & Desktop) */
-        @font-face {
-            font-family: 'BodoniModa';
-            src: url('https://jsdelivr.net') format('truetype');
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'EloquentJF';
-            src: url('https://jsdelivr.net') format('truetype');
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'IvyPresto';
-            src: url('https://jsdelivr.net') format('truetype');
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'JeanneModerno';
-            src: url('https://jsdelivr.net') format('truetype');
-            font-display: swap;
-        }
+        /* [Keep your font definitions here - they are working!] */
+        @font-face { font-family: 'BodoniModa'; src: url('https://jsdelivr.net') format('truetype'); }
+        @font-face { font-family: 'EloquentJF'; src: url('https://jsdelivr.net') format('truetype'); }
+        @font-face { font-family: 'IvyPresto'; src: url('https://jsdelivr.net') format('truetype'); }
+        @font-face { font-family: 'JeanneModerno'; src: url('https://jsdelivr.net') format('truetype'); }
 
-        /* 2. DESKTOP LAYOUT (Unchanged) */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; 
+            overflow: hidden;
             background-color: #ffffff;
         }
+
         .iframe-container {
             position: absolute;
             top: -50px; 
@@ -43,30 +28,26 @@
             width: 100%;
             height: calc(100% + 50px);
         }
+
         iframe {
-            width: 100%;
-            height: 100%;
+            /* 2. FORCE THE WIDTH TO MATCH THE SCREEN */
+            width: 100vw !important;
+            height: 100% !important;
             border: none;
         }
 
-        /* 3. MOBILE FIXES (Only triggers on phones) */
+        /* 3. MOBILE SPECIFIC OVERRIDE */
         @media (max-width: 768px) {
             .iframe-container {
-                top: -60px; 
-                height: calc(100% + 60px);
-            }
-            iframe {
-                width: 100vw !important;
-                min-width: 100vw !important;
-                transform: scale(1);
-                transform-origin: 0 0;
+                top: -65px; /* Deeper cut for mobile */
+                height: calc(100% + 65px);
             }
         }
     </style>
 </head>
 <body>
     <div class="iframe-container">
-        <iframe src="https://angelynnarts.wixsite.com/angelynnarts" allowfullscreen></iframe>
+        <iframe src="https://wixsite.com" allowfullscreen></iframe>
     </div>
 </body>
 </html>
