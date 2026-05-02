@@ -2,46 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>Angelynn Arts</title>
     <style>
-        /* [KEEP YOUR @font-face BLOCKS HERE] */
-
-        body, html {
-            margin: 0; padding: 0;
-            height: 100%; width: 100%;
-            overflow: hidden;
-            background-color: #ffffff;
+        /* 1. STABLE FONT DEFINITIONS (jsDelivr) */
+        @font-face {
+            font-family: 'BodoniModa';
+            src: url('https://jsdelivr.net') format('truetype');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'EloquentJF';
+            src: url('https://jsdelivr.net') format('truetype');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'IvyPresto';
+            src: url('https://jsdelivr.net') format('truetype');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JeanneModerno';
+            src: url('https://jsdelivr.net') format('truetype');
+            font-display: swap;
         }
 
+        /* 2. DESKTOP LAYOUT (Your Perfect Version) */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; 
+            background-color: #ffffff;
+        }
         .iframe-container {
             position: absolute;
             top: -50px; 
             left: 0;
             width: 100%;
             height: calc(100% + 50px);
-            /* This helps center the site before we stretch it */
-            display: flex;
-            justify-content: center;
         }
-
         iframe {
-            width: 100vw !important;
-            height: 100% !important;
+            width: 100%;
+            height: 100%;
             border: none;
         }
 
-        /* MOBILE STRETCH FIX */
+        /* 3. MOBILE FIX (Forces full-width on your Samsung) */
         @media (max-width: 768px) {
             .iframe-container {
                 top: -65px; 
                 height: calc(100% + 65px);
             }
             iframe {
-                /* This is the magic line: it forces the 'blue-ish' gaps to disappear */
-                width: 100% !important;
+                /* Forces the iframe to be 100% of your phone screen width */
+                width: 100vw !important;
                 min-width: 100% !important;
-                object-fit: cover;
+                /* Prevents the 'zoomed out' look */
+                transform: scale(1);
+                transform-origin: 0 0;
             }
         }
     </style>
